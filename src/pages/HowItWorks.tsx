@@ -1,0 +1,105 @@
+
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import PageTransition from '../components/PageTransition';
+
+const palmTypes = [
+  {
+    name: "Khalas Palm",
+    image: "https://www.mdpi.com/plants/plants-10-00638/article_deploy/html/images/plants-10-00638-g001.png",
+    description: "Known for its sweet dates and is one of the most commercially important date palm varieties."
+  },
+  {
+    name: "Fahal Palm",
+    image: "https://www.mdpi.com/agriculture/agriculture-11-00740/article_deploy/html/images/agriculture-11-00740-g001.png",
+    description: "Male date palm variety, important for pollination in date palm cultivation."
+  },
+  {
+    name: "Furd Palm",
+    image: "https://www.mdpi.com/plants/plants-11-01441/article_deploy/html/images/plants-11-01441-g001.png",
+    description: "Recognizable by its distinctive fruit shape and is grown in many regions."
+  },
+  {
+    name: "Qish Ward Palm",
+    image: "https://www.mdpi.com/plants/plants-11-01441/article_deploy/html/images/plants-11-01441-g004.png",
+    description: "Features unique characteristics and is valued for its ornamental qualities."
+  }
+];
+
+const HowItWorks = () => {
+  const navigate = useNavigate();
+
+  return (
+    <PageTransition>
+      <div className="min-h-screen bg-white">
+        <div className="p-4">
+          <Button 
+            onClick={() => navigate('/main-menu')} 
+            className="bg-palm hover:bg-palm-dark text-white"
+          >
+            <ArrowLeft size={16} className="mr-2" />
+            Back
+          </Button>
+        </div>
+        
+        <div className="container mx-auto px-4 py-8">
+          <h1 className="text-2xl font-bold text-palm-dark mb-6">How Palm Vision Works</h1>
+          
+          <div className="mb-8">
+            <h2 className="text-xl font-semibold text-palm mb-3">About the App</h2>
+            <p className="mb-4">
+              Palm Vision uses machine learning technology to identify four different types of palm trees from images. 
+              The app helps farmers, botanists, researchers, and anyone interested in palm trees to quickly identify palm varieties.
+            </p>
+            <p>
+              Our model was trained on thousands of palm tree images to accurately recognize Khalas, Fahal, Furd, and Qish Ward palms,
+              or to tell you when something is not a palm tree at all.
+            </p>
+          </div>
+          
+          <div className="mb-8">
+            <h2 className="text-xl font-semibold text-palm mb-3">How to Use</h2>
+            <div className="space-y-4">
+              <div>
+                <h3 className="font-medium text-palm-dark">Camera</h3>
+                <p>Take a clear photo of a palm tree. Make sure the tree is well-lit and centered in the frame.</p>
+              </div>
+              <div>
+                <h3 className="font-medium text-palm-dark">Import Image</h3>
+                <p>Select an existing photo from your gallery to analyze.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h2 className="text-xl font-semibold text-palm mb-4">Palm Tree Types</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {palmTypes.map((palm) => (
+                <Card key={palm.name} className="overflow-hidden">
+                  <CardContent className="p-0">
+                    <div className="h-48 overflow-hidden">
+                      <img 
+                        src={palm.image} 
+                        alt={palm.name} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="font-semibold text-palm-dark mb-1">{palm.name}</h3>
+                      <p className="text-sm text-gray-600">{palm.description}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </PageTransition>
+  );
+};
+
+export default HowItWorks;
