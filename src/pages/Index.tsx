@@ -8,9 +8,13 @@ const Index = () => {
   useEffect(() => {
     // Navigate to the welcome page on app start
     navigate('/');
-  }, [navigate]);
+  }, []);
 
-  return null;
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-white p-4">
+      <p>Loading app...</p>
+    </div>
+  );
 };
 
 export default Index;
