@@ -2,16 +2,17 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'app.lovable.f17818c568754e16b8195136671f2e1d',
-  appName: 'palm-vision-detect',
+  appId: 'app.lovable.palm.vision.detect',
+  appName: 'Palm Vision',
   webDir: 'dist',
   bundledWebRuntime: false,
   plugins: {
     SplashScreen: {
-      launchShowDuration: 3000,
+      launchShowDuration: 2000,
       backgroundColor: "#ffffff",
       androidScaleType: "CENTER_CROP",
-      splashImmersive: true
+      splashImmersive: true,
+      showSpinner: false
     },
     Permissions: {
       camera: true
@@ -20,7 +21,14 @@ const config: CapacitorConfig = {
   android: {
     allowMixedContent: true,
     captureInput: true,
-    webContentsDebuggingEnabled: false
+    webContentsDebuggingEnabled: false,
+    backgroundColor: "#ffffff",
+    buildOptions: {
+      keystorePath: null,
+      keystorePassword: null,
+      keystoreAlias: null,
+      keystoreAliasPassword: null
+    }
   },
   ios: {
     contentInset: "always",

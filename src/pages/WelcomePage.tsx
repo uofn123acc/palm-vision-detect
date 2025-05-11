@@ -14,8 +14,8 @@ const WelcomePage = () => {
         // Load the teachable machine model
         await loadModel();
         
-        // Wait for 3 seconds for demonstration purposes
-        await new Promise(resolve => setTimeout(resolve, 3000));
+        // Wait for 2 seconds instead of 3 for faster startup
+        await new Promise(resolve => setTimeout(resolve, 2000));
         
         // Navigate to main menu
         navigate('/main-menu');
@@ -34,7 +34,7 @@ const WelcomePage = () => {
           <LoadingCircle className="scale-150" />
           
           <div className="animate-fade-in mt-8">
-            <p className="text-center text-lg font-medium text-palm">Welcome To Palm Vision, please wait</p>
+            <p className="text-center text-lg font-medium text-palm">Welcome To Palm Vision</p>
           </div>
         </div>
       </div>

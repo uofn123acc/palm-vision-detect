@@ -6,7 +6,7 @@ const Index = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Redirect to the welcome page
+    // Navigate to the welcome page on app start
     navigate('/');
   }, [navigate]);
 
