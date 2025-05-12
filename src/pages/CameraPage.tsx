@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Camera, SwitchCamera, Image, Focus } from 'lucide-react';
+import { ArrowLeft, Camera, Image } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import { toast } from '@/components/ui/sonner';
 
@@ -79,66 +79,6 @@ const CameraPage = () => {
     }
   };
 
-  const switchCamera = () => {
-    setFacingMode(prev => prev === 'environment' ? 'user' : 'environment');
-  };
-
-  const handleFocus = async (event: React.MouseEvent<HTMLDivElement>) => {
-    if (!videoRef.current || !streamRef.current) return;
-
-    try {
-      const videoTrack = streamRef.current.getVideoTracks()[0];
-      
-      // Show focus animation regardless of whether actual focus is supported
-      const rect = videoRef.current.getBoundingClientRect();
-      const x = event.clientX;
-      const y = event.clientY;
-      
-      // Create and show focus indicator
-      const focusElement = document.createElement('div');
-      focusElement.className = 'absolute w-12 h-12 border-2 border-white rounded-full -translate-x-1/2 -translate-y-1/2 animate-pulse';
-      focusElement.style.left = `${x}px`;
-      focusElement.style.top = `${y}px`;
-      
-      if (event.currentTarget) {
-        event.currentTarget.appendChild(focusElement);
-        
-        // Remove focus indicator after animation
-        setTimeout(() => {
-          if (focusElement.parentNode) {
-            focusElement.parentNode.removeChild(focusElement);
-          }
-        }, 1000);
-      }
-      
-      // Try to set focus if available
-      // Note: Most mobile browsers don't support programmatic focus controls via these APIs
-      try {
-        // Calculate normalized coordinates (0-1) for potential focus point
-        const normalizedX = (x - rect.left) / rect.width;
-        const normalizedY = (y - rect.top) / rect.height;
-        
-        // Attempt to apply focus constraints - this is browser/device dependent
-        // and may fail silently on most devices
-        await videoTrack.applyConstraints({
-          advanced: [{
-            // Using standard constraints that are more likely to be supported
-            exposureMode: 'manual',
-            exposureCompensation: 0
-          }]
-        });
-        
-        // Inform user that advanced focus features may not be supported
-        toast.info("Tapped to focus. Note that manual focus may not be supported on all devices.");
-      } catch (focusError) {
-        // Focus controls not supported, but we've already shown the visual indicator
-        console.log("Focus controls not supported on this device/browser");
-      }
-    } catch (error) {
-      console.error('Error handling focus:', error);
-    }
-  };
-
   const openGallery = () => {
     // Create a file input element
     const input = document.createElement('input');
@@ -178,13 +118,6 @@ const CameraPage = () => {
           
           <div className="flex gap-2">
             <Button 
-              onClick={switchCamera} 
-              className="bg-black/50 hover:bg-black/70 text-white rounded-full w-10 h-10 p-0"
-            >
-              <SwitchCamera size={20} />
-            </Button>
-            
-            <Button 
               onClick={openGallery} 
               className="bg-black/50 hover:bg-black/70 text-white rounded-full w-10 h-10 p-0"
             >
@@ -194,22 +127,14 @@ const CameraPage = () => {
         </div>
         
         <div className="flex-1 flex flex-col items-center justify-center relative">
-          {/* Video element for camera preview with focus capability */}
-          <div 
-            className="relative h-full w-full" 
-            onClick={handleFocus}
-          >
+          {/* Video element for camera preview */}
+          <div className="relative h-full w-full">
             <video 
               ref={videoRef} 
               autoPlay 
               playsInline 
               className="h-full w-full object-cover"
             />
-            
-            {/* Focus indicator */}
-            <div className="absolute inset-0 pointer-events-none">
-              {/* Focus elements will be created dynamically */}
-            </div>
           </div>
           
           {/* Canvas for capturing images (hidden) */}
