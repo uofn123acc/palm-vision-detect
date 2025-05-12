@@ -65,7 +65,7 @@ const ResultsPage = () => {
     } else if (normalizedType.includes('qish')) {
       return palmDescriptions.find(p => p.name.toLowerCase().includes('qish'))?.description;
     } else {
-      return "No match found among the known palm types (Furd, Fahal, Qish Ward, Khalas)";
+      return ""; // Removed the "No match found" message
     }
   };
 
