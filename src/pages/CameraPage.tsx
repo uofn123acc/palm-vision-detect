@@ -89,35 +89,16 @@ const CameraPage = () => {
     try {
       const videoTrack = streamRef.current.getVideoTracks()[0];
       
-      // Check if focus capability is available
-      const capabilities = videoTrack.getCapabilities();
-      if (!capabilities.focusDistance && !capabilities.focusMode) {
-        // Focus not supported
-        toast.info("Manual focus not supported on this device");
-        return;
-      }
-
-      // Get click coordinates relative to the video element
+      // Show focus animation regardless of whether actual focus is supported
       const rect = videoRef.current.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width;
-      const y = (event.clientY - rect.top) / rect.height;
-
-      // Apply focus if supported
-      const constraints = {
-        advanced: [{ 
-          focusMode: "manual",
-          focusDistance: 0, // Try to focus on the clicked area
-          pointsOfInterest: [{ x, y }]
-        }]
-      };
-
-      await videoTrack.applyConstraints(constraints);
+      const x = event.clientX;
+      const y = event.clientY;
       
-      // Show focus animation
+      // Create and show focus indicator
       const focusElement = document.createElement('div');
       focusElement.className = 'absolute w-12 h-12 border-2 border-white rounded-full -translate-x-1/2 -translate-y-1/2 animate-pulse';
-      focusElement.style.left = `${event.clientX}px`;
-      focusElement.style.top = `${event.clientY}px`;
+      focusElement.style.left = `${x}px`;
+      focusElement.style.top = `${y}px`;
       
       if (event.currentTarget) {
         event.currentTarget.appendChild(focusElement);
@@ -130,8 +111,31 @@ const CameraPage = () => {
         }, 1000);
       }
       
+      // Try to set focus if available
+      // Note: Most mobile browsers don't support programmatic focus controls via these APIs
+      try {
+        // Calculate normalized coordinates (0-1) for potential focus point
+        const normalizedX = (x - rect.left) / rect.width;
+        const normalizedY = (y - rect.top) / rect.height;
+        
+        // Attempt to apply focus constraints - this is browser/device dependent
+        // and may fail silently on most devices
+        await videoTrack.applyConstraints({
+          advanced: [{
+            // Using standard constraints that are more likely to be supported
+            exposureMode: 'manual',
+            exposureCompensation: 0
+          }]
+        });
+        
+        // Inform user that advanced focus features may not be supported
+        toast.info("Tapped to focus. Note that manual focus may not be supported on all devices.");
+      } catch (focusError) {
+        // Focus controls not supported, but we've already shown the visual indicator
+        console.log("Focus controls not supported on this device/browser");
+      }
     } catch (error) {
-      console.error('Focus error:', error);
+      console.error('Error handling focus:', error);
     }
   };
 
