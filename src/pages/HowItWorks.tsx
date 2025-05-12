@@ -13,7 +13,7 @@ const palmTypes = [
     description: "Origin & Cultivation: Khalas is a widely grown cultivar in the Gulf region. It occupies a large portion of farmlands in Oman and is considered an original regional cultivar.\n\nFruit Characteristics: Khalas dates have a rich, sweet taste and are popular among consumers for their flavor and quality.\n\nSignificance: One of the most valued and expensive date varieties in the Gulf, Khalas is important to both local consumption and the date industry."
   },
   {
-    name: "Male Date Palm (Fahal)",
+    name: "Fahal (Male Date Palm)",
     image: "https://www.mdpi.com/agriculture/agriculture-11-00740/article_deploy/html/images/agriculture-11-00740-g001.png",
     description: "Role in Cultivation: The male date palm, is essential for pollinating female palms. It produces pollen required for fruit formation.\n\nPollination Efficiency: One healthy male palm can effectively pollinate up to 50 female palms.\n\nSignificance: Although it does not produce fruit, the male palm is crucial for successful date cultivation."
   },
@@ -55,8 +55,7 @@ const HowItWorks = () => {
               The app helps farmers, botanists, researchers, and anyone interested in palm trees to quickly identify palm varieties.
             </p>
             <p>
-              Our model was trained on thousands of palm tree images to accurately recognize Khalas, Fahal, Furd, and Qish Ward palms,
-              or to tell you when something is not a palm tree at all.
+              Our model was trained on thousands of images to accurately identify the four most common palm tree types in Oman—Khalas, Fahal, Furd, and Qish Ward—or to confidently detect when an image is not a palm tree at all.
             </p>
           </div>
           
