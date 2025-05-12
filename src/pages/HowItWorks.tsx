@@ -74,21 +74,21 @@ const HowItWorks = () => {
           </div>
           
           <div>
-            <h2 className="text-xl font-semibold text-palm mb-4">Palm Tree Types</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <h2 className="text-xl font-semibold text-palm mb-6">Palm Tree Types</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {palmTypes.map((palm) => (
-                <Card key={palm.name} className="overflow-hidden">
+                <Card key={palm.name} className="overflow-hidden shadow-md">
                   <CardContent className="p-0">
-                    <div className="h-72 overflow-hidden">
+                    <div className="aspect-[4/3] relative bg-white">
                       <img 
                         src={palm.image} 
                         alt={palm.name} 
-                        className="w-full h-full object-contain bg-gray-50"
+                        className="absolute inset-0 w-full h-full object-contain p-4"
                       />
                     </div>
-                    <div className="p-4">
-                      <h3 className="font-semibold text-palm-dark mb-1">{palm.name}</h3>
-                      <p className="text-sm text-gray-600 whitespace-pre-line">{palm.description}</p>
+                    <div className="p-6">
+                      <h3 className="text-lg font-semibold text-palm-dark mb-2">{palm.name}</h3>
+                      <p className="text-sm text-gray-600 whitespace-pre-line leading-relaxed">{palm.description}</p>
                     </div>
                   </CardContent>
                 </Card>
