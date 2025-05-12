@@ -19,7 +19,7 @@ const palmTypes = [
   },
   {
     name: "Furid Date Palm",
-    image: "/lovable-uploads/ea73ba53-e965-4d43-8b5e-2807063b7f1e.png",
+    image: "/lovable-uploads/91c9cb29-749c-4e2f-8880-ecf564ac7fcc.png",
     description: "Origin & Cultivation: Furid is a prominent Omani cultivar, widely cultivated in Oman and valued for its resilience during handling and transport.\n\nFruit Characteristics: Furid dates are recognized by their deep, dark brown color and slightly wrinkled skin. The flesh is soft with a mildly sweet flavor.\n\nSignificance: This variety is a staple in Omani agriculture and contributes significantly to the country's date production."
   },
   {
