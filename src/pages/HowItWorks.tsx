@@ -23,7 +23,7 @@ const palmTypes = [
   },
   {
     name: "Qish-warad Date Palm",
-    image: "/lovable-uploads/68af0a0f-4ba7-4ad4-827b-32573e80c76b.png",
+    image: "/lovable-uploads/2458a01b-2e97-40f2-b631-63e1084be7fd.png",
     description: "Origin & Cultivation: Qish-warad is a traditional Omani variety grown in different parts of the country.\n\nFruit Characteristics: It produces reddish, sweet dates that are favored for fresh consumption and use in traditional foods.\n\nSignificance: This variety is culturally significant and adds to the diversity of Omani date palms."
   }
 ];
