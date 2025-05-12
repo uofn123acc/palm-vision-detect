@@ -73,12 +73,9 @@ const ResultsPage = () => {
           
           {result && (
             <div className="w-full max-w-md mx-auto bg-secondary p-4 rounded-lg animate-slide-up">
-              <h2 className="text-xl font-bold text-palm-dark text-center mb-2">
+              <h2 className="text-xl font-bold text-palm-dark text-center mb-4">
                 {result.type}
               </h2>
-              <p className="text-center mb-4 text-gray-600">
-                Confidence: {Math.round(result.confidence * 100)}%
-              </p>
               <p className="text-gray-700">
                 {getPalmDescription(result.type)}
               </p>
