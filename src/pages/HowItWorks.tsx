@@ -9,22 +9,22 @@ import PageTransition from '../components/PageTransition';
 const palmTypes = [
   {
     name: "Khalas Date Palm",
-    image: "/lovable-uploads/76d3ffa0-d8aa-476c-b0b9-9288437b259a.png",
+    image: "/lovable-uploads/12099f1c-df88-42b6-bb47-8d1fe29b0f0f.png",
     description: "Origin & Cultivation: Khalas is a widely grown cultivar in the Gulf region. It occupies a large portion of farmlands in Oman and is considered an original regional cultivar.\n\nFruit Characteristics: Khalas dates have a rich, sweet taste and are popular among consumers for their flavor and quality.\n\nSignificance: One of the most valued and expensive date varieties in the Gulf, Khalas is important to both local consumption and the date industry."
   },
   {
     name: "Fahal (Male Date Palm)",
-    image: "/lovable-uploads/8ac9f2e1-a5c3-475f-a6bb-9b1a0a3bcc49.png",
+    image: "/lovable-uploads/3ffdd4f2-a465-4878-acb7-ec9b89f34d07.png",
     description: "Role in Cultivation: The male date palm, is essential for pollinating female palms. It produces pollen required for fruit formation.\n\nPollination Efficiency: One healthy male palm can effectively pollinate up to 50 female palms.\n\nSignificance: Although it does not produce fruit, the male palm is crucial for successful date cultivation."
   },
   {
     name: "Furid Date Palm",
-    image: "/lovable-uploads/fee37ff0-ec43-4a16-9fdb-cb716ab6f5ab.png",
+    image: "/lovable-uploads/ea73ba53-e965-4d43-8b5e-2807063b7f1e.png",
     description: "Origin & Cultivation: Furid is a prominent Omani cultivar, widely cultivated in Oman and valued for its resilience during handling and transport.\n\nFruit Characteristics: Furid dates are recognized by their deep, dark brown color and slightly wrinkled skin. The flesh is soft with a mildly sweet flavor.\n\nSignificance: This variety is a staple in Omani agriculture and contributes significantly to the country's date production."
   },
   {
     name: "Qish-warad Date Palm",
-    image: "/lovable-uploads/4b44fec8-6fa1-464a-9af7-b90ae4d8d16f.png",
+    image: "/lovable-uploads/68af0a0f-4ba7-4ad4-827b-32573e80c76b.png",
     description: "Origin & Cultivation: Qish-warad is a traditional Omani variety grown in different parts of the country.\n\nFruit Characteristics: It produces reddish, sweet dates that are favored for fresh consumption and use in traditional foods.\n\nSignificance: This variety is culturally significant and adds to the diversity of Omani date palms."
   }
 ];
