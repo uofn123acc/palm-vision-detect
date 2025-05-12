@@ -8,24 +8,24 @@ import PageTransition from '../components/PageTransition';
 
 const palmTypes = [
   {
-    name: "Khalas Palm",
+    name: "Khalas Date Palm",
     image: "https://www.mdpi.com/plants/plants-10-00638/article_deploy/html/images/plants-10-00638-g001.png",
-    description: "Known for its sweet dates and is one of the most commercially important date palm varieties."
+    description: "Origin & Cultivation: Khalas is a widely grown cultivar in the Gulf region. It occupies a large portion of farmlands in Oman and is considered an original regional cultivar.\n\nFruit Characteristics: Khalas dates have a rich, sweet taste and are popular among consumers for their flavor and quality.\n\nSignificance: One of the most valued and expensive date varieties in the Gulf, Khalas is important to both local consumption and the date industry."
   },
   {
-    name: "Fahal Palm",
+    name: "Male Date Palm (Fahal)",
     image: "https://www.mdpi.com/agriculture/agriculture-11-00740/article_deploy/html/images/agriculture-11-00740-g001.png",
-    description: "Male date palm variety, important for pollination in date palm cultivation."
+    description: "Role in Cultivation: The male date palm, is essential for pollinating female palms. It produces pollen required for fruit formation.\n\nPollination Efficiency: One healthy male palm can effectively pollinate up to 50 female palms.\n\nSignificance: Although it does not produce fruit, the male palm is crucial for successful date cultivation."
   },
   {
-    name: "Furd Palm",
+    name: "Fardh Date Palm",
     image: "https://www.mdpi.com/plants/plants-11-01441/article_deploy/html/images/plants-11-01441-g001.png",
-    description: "Recognizable by its distinctive fruit shape and is grown in many regions."
+    description: "Origin & Cultivation: Fardh is a prominent Omani cultivar, widely cultivated in Oman and valued for its resilience during handling and transport.\n\nFruit Characteristics: Fardh dates are recognized by their deep, dark brown color and slightly wrinkled skin. The flesh is soft with a mildly sweet flavor.\n\nSignificance: This variety is a staple in Omani agriculture and contributes significantly to the country's date production."
   },
   {
-    name: "Qish Ward Palm",
+    name: "Qash al-Ward Date Palm",
     image: "https://www.mdpi.com/plants/plants-11-01441/article_deploy/html/images/plants-11-01441-g004.png",
-    description: "Features unique characteristics and is valued for its ornamental qualities."
+    description: "Origin & Cultivation: Qash al-Ward is a traditional Omani variety grown in different parts of the country.\n\nFruit Characteristics: It produces reddish, sweet dates that are favored for fresh consumption and use in traditional foods.\n\nSignificance: This variety is culturally significant and adds to the diversity of Omani date palms."
   }
 ];
 
@@ -89,7 +89,7 @@ const HowItWorks = () => {
                     </div>
                     <div className="p-4">
                       <h3 className="font-semibold text-palm-dark mb-1">{palm.name}</h3>
-                      <p className="text-sm text-gray-600">{palm.description}</p>
+                      <p className="text-sm text-gray-600 whitespace-pre-line">{palm.description}</p>
                     </div>
                   </CardContent>
                 </Card>
