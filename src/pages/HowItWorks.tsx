@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -74,15 +75,15 @@ const HowItWorks = () => {
           
           <div>
             <h2 className="text-xl font-semibold text-palm mb-4">Palm Tree Types</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {palmTypes.map((palm) => (
                 <Card key={palm.name} className="overflow-hidden">
                   <CardContent className="p-0">
-                    <div className="h-48 overflow-hidden">
+                    <div className="h-72 overflow-hidden">
                       <img 
                         src={palm.image} 
                         alt={palm.name} 
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain bg-gray-50"
                       />
                     </div>
                     <div className="p-4">
