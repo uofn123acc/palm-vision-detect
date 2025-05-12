@@ -41,9 +41,11 @@ const ResultsPage = () => {
       case 'fahal':
         return "Fahal Palm: Male date palm variety, important for pollination in date palm cultivation.";
       case 'furd':
-        return "Furd Palm: Recognizable by its distinctive fruit shape and is grown in many regions.";
+      case 'furid':
+        return "Furid Palm: Recognizable by its distinctive fruit shape and is grown in many regions.";
       case 'qish ward':
-        return "Qish Ward Palm: Features unique characteristics and is valued for its ornamental qualities.";
+      case 'qish-warad':
+        return "Qish-warad Palm: Features unique characteristics and is valued for its ornamental qualities.";
       case 'not a palm tree':
         return "This does not appear to be one of the four palm tree types in our database.";
       default:
