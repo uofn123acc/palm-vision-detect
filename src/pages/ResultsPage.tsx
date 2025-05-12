@@ -14,6 +14,25 @@ interface PredictionResult {
   }>;
 }
 
+const palmDescriptions = [
+  {
+    name: "Khalas Date Palm",
+    description: "Origin & Cultivation: Khalas is a widely grown cultivar in the Gulf region. It occupies a large portion of farmlands in Oman and is considered an original regional cultivar.\n\nFruit Characteristics: Khalas dates have a rich, sweet taste and are popular among consumers for their flavor and quality.\n\nSignificance: One of the most valued and expensive date varieties in the Gulf, Khalas is important to both local consumption and the date industry."
+  },
+  {
+    name: "Fahal (Male Date Palm)",
+    description: "Role in Cultivation: The male date palm, is essential for pollinating female palms. It produces pollen required for fruit formation.\n\nPollination Efficiency: One healthy male palm can effectively pollinate up to 50 female palms.\n\nSignificance: Although it does not produce fruit, the male palm is crucial for successful date cultivation."
+  },
+  {
+    name: "Furid Date Palm",
+    description: "Origin & Cultivation: Furid is a prominent Omani cultivar, widely cultivated in Oman and valued for its resilience during handling and transport.\n\nFruit Characteristics: Furid dates are recognized by their deep, dark brown color and slightly wrinkled skin. The flesh is soft with a mildly sweet flavor.\n\nSignificance: This variety is a staple in Omani agriculture and contributes significantly to the country's date production."
+  },
+  {
+    name: "Qish-warad Date Palm",
+    description: "Origin & Cultivation: Qish-warad is a traditional Omani variety grown in different parts of the country.\n\nFruit Characteristics: It produces reddish, sweet dates that are favored for fresh consumption and use in traditional foods.\n\nSignificance: This variety is culturally significant and adds to the diversity of Omani date palms."
+  }
+];
+
 const ResultsPage = () => {
   const navigate = useNavigate();
   const [image, setImage] = useState<string | null>(null);
@@ -34,22 +53,19 @@ const ResultsPage = () => {
     setResult(JSON.parse(resultData));
   }, [navigate]);
 
-  const getPalmDescription = (palmType: string) => {
-    switch (palmType.toLowerCase()) {
-      case 'khalas':
-        return "Khalas Palm: Known for its sweet dates and is one of the most commercially important date palm varieties.";
-      case 'fahal':
-        return "Fahal Palm: Male date palm variety, important for pollination in date palm cultivation.";
-      case 'furd':
-      case 'furid':
-        return "Furid Palm: Recognizable by its distinctive fruit shape and is grown in many regions.";
-      case 'qish ward':
-      case 'qish-warad':
-        return "Qish-warad Palm: Features unique characteristics and is valued for its ornamental qualities.";
-      case 'not a palm tree':
-        return "This does not appear to be one of the four palm tree types in our database.";
-      default:
-        return "Could not identify this palm type.";
+  const getDetailedPalmDescription = (palmType: string) => {
+    const normalizedType = palmType.toLowerCase();
+    
+    if (normalizedType.includes('khalas')) {
+      return palmDescriptions.find(p => p.name.toLowerCase().includes('khalas'))?.description;
+    } else if (normalizedType.includes('fahal')) {
+      return palmDescriptions.find(p => p.name.toLowerCase().includes('fahal'))?.description;
+    } else if (normalizedType.includes('furd') || normalizedType.includes('furid')) {
+      return palmDescriptions.find(p => p.name.toLowerCase().includes('furid'))?.description;
+    } else if (normalizedType.includes('qish')) {
+      return palmDescriptions.find(p => p.name.toLowerCase().includes('qish'))?.description;
+    } else {
+      return "This does not appear to be one of the four palm tree types in our database.";
     }
   };
 
@@ -76,8 +92,8 @@ const ResultsPage = () => {
               <h2 className="text-xl font-bold text-palm-dark text-center mb-4">
                 {result.type}
               </h2>
-              <p className="text-gray-700">
-                {getPalmDescription(result.type)}
+              <p className="text-gray-700 whitespace-pre-line">
+                {getDetailedPalmDescription(result.type)}
               </p>
             </div>
           )}
