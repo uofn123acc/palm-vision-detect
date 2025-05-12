@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -9,7 +8,7 @@ import PageTransition from '../components/PageTransition';
 const palmTypes = [
   {
     name: "Khalas Date Palm",
-    image: "/lovable-uploads/12099f1c-df88-42b6-bb47-8d1fe29b0f0f.png",
+    image: "/lovable-uploads/1249fe97-a006-4c4b-9040-cc1a5d40889a.png",
     description: "Origin & Cultivation: Khalas is a widely grown cultivar in the Gulf region. It occupies a large portion of farmlands in Oman and is considered an original regional cultivar.\n\nFruit Characteristics: Khalas dates have a rich, sweet taste and are popular among consumers for their flavor and quality.\n\nSignificance: One of the most valued and expensive date varieties in the Gulf, Khalas is important to both local consumption and the date industry."
   },
   {
