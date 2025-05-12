@@ -14,7 +14,7 @@ const palmTypes = [
   },
   {
     name: "Fahal (Male Date Palm)",
-    image: "/lovable-uploads/3ffdd4f2-a465-4878-acb7-ec9b89f34d07.png",
+    image: "/lovable-uploads/6ef0ff68-3741-46a5-89dc-9821eebb0ba1.png",
     description: "Role in Cultivation: The male date palm, is essential for pollinating female palms. It produces pollen required for fruit formation.\n\nPollination Efficiency: One healthy male palm can effectively pollinate up to 50 female palms.\n\nSignificance: Although it does not produce fruit, the male palm is crucial for successful date cultivation."
   },
   {
